@@ -20,7 +20,7 @@ If you want a framework, ECS, class system, or heavy abstractions — this is **
 
 ## 📦 Modules
 
-morolua is split into small, focused modules. You can require them individually or through the main entry.
+morolua is split into small, focused modules. You can require them individually or require as a whole from morolua.init.lua file.
 
 The modules are intentionally ordered from **lowest‑level primitives** to **higher‑level behavior**.
 
@@ -39,6 +39,7 @@ Utility helpers for working with strings safely and explicitly.
 * empty / nil checks
 * prefix & suffix checks
 * common string predicates
+* features buffers
 
 ### `typex`
 
@@ -64,6 +65,7 @@ Iteration utilities for tables and sequences.
 
 * functional‑style iteration helpers
 * safer loops and predicates
+* features generators
 
 ### `coroutinex`
 
@@ -90,8 +92,7 @@ Table utilities with **explicit behavior**.
 
 Includes:
 
-* shallow copy helpers
-* deep copy helpers (with clear limitations)
+* shallow copy/deep copy helpers (with clear limitations) helpers
 * basic table helpers
 
 Important:
@@ -143,8 +144,12 @@ All tasks run on the main thread.
 Copy the `morolua/` folder into your project and require what you need.
 
 ```lua
-local morolua = require("morolua.init")
+local morolua = require("morolua.init") --init gets everymodule
 local stringx = morolua.stringx
+--or you can do
+local eventx = require("morolua.core.eventx")
+uievents = eventx.new()
+--to only get the part(s) you want
 ```
 
 ### Option 2: Git submodule
