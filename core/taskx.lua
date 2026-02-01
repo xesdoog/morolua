@@ -96,7 +96,7 @@ end
 
 
 -- cancel all tasks
-function taskx.cancel_all()
+function taskx.cancelAll()
     for i = #tasks, 1, -1 do
     tasks[i] = nil
 end
