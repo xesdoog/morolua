@@ -23,7 +23,7 @@ function iterx.each(src)
     return toGen(src)
 end
 
--- map (NOW generator -> generator)
+-- map (generator/table -> generator)
 function iterx.map(src, fn)
     local gen = toGen(src)
     return function()
@@ -34,7 +34,7 @@ function iterx.map(src, fn)
     end
 end
 
--- filter (generator -> generator)
+-- filter (generator/table -> generator)
 function iterx.filter(src, fn)
     local gen = toGen(src)
     return function()
