@@ -80,7 +80,7 @@ end
 
 -- function assertion
 
-function assertx.func(v, name)
+function assertx.isFunction(v, name)
     assertx.type(v, "function", name)
 end
 
