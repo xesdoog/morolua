@@ -36,12 +36,12 @@ vector4.__index = vector4
 ---@param w float?
 ---@return vector4
 function vector4:new(x, y, z, w)
-	local instance = setmetatable({}, vector4)
-	instance.x = x or 0
-	instance.y = y or 0
-	instance.z = z or 0
-	instance.w = w or 0
-	return instance
+	return setmetatable({
+		x = x or 0,
+		y = y or 0,
+		z = z or 0,
+		w = w or 0,
+	}, vector4)
 end
 
 -- Checks if the given argument is a valid vec4, raises on failure.
